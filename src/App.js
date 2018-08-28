@@ -78,7 +78,7 @@ class App extends Component {
     return (
       <div className="neighborhood-app">
         <Header />
-        <main>
+        <main role="main">
           <AsideMenu />
           <Map />
         </main>
