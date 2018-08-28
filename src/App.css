@@ -1,29 +1,40 @@
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-#map {
-  height: 100vh;
-}
-
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
+
+.neighborhood-app {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+/* main {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #fdfdfd;
+  color: #333;
+  line-height: 1.5;
+  position: relative;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+
+

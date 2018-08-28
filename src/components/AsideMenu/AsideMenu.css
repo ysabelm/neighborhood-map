@@ -1,3 +1,27 @@
-#my-favorite-places {
+.aside-menu {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aside-menu h2{
+    font-size: 1em;
+}
+
+.my-favorite-places {
+    display: flex;
+    flex-direction: column;
+}
+
+#list-favorite-places {
     list-style: none
 }

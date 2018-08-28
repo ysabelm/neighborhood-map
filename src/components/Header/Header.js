@@ -7,7 +7,7 @@ class Header extends React.Component {
 
         return (
             <header>
-                <h1 className="neighborhood-map-title">Find your place: Wine or Beer?</h1>
+                <h1 role="heading" className="neighborhood-app-title">Find your place: Wine or Beer?</h1>
             </header>
         )
     }

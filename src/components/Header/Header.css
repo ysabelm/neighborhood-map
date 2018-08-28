@@ -1,0 +1,12 @@
+header {
+    background-color: #222;
+    height: 45px;
+    padding: 10px;
+    color: white;
+}
+
+.neighborhood-app-title {
+    font-size: 1.3em;
+    margin: 0;
+    color: white;
+}

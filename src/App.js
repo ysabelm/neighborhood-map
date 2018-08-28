@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import scriptLoader from 'react-async-script-loader';
-import { MAP_KEY } from './data/credentials';
+import { MAP_KEY, CLIENT_ID, CLIENT_SECRET } from './data/credentials';
 import { mapStyles } from './data/mapStyles.js';
 import './App.css';
 
 import Map from './components/Map/Map'
 import Header from './components/Header/Header'
 import AsideMenu from './components/AsideMenu/AsideMenu'
+import { getSearchResult } from './fourSquareAPI';
 
 
 class App extends Component {
@@ -48,8 +49,8 @@ class App extends Component {
   }
 
 
-  
-  
+
+
 
 
   // Create an array of markers using the pointsOfInterest
@@ -75,7 +76,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="neighborhood-app">
         <Header />
         <main>
           <AsideMenu />
