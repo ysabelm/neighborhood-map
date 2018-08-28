@@ -21,9 +21,9 @@ class AsideMenu extends Component {
         <div className="search-form" aria-label="Search place">
           <label>Find Your Theatre</label>
           <input
-            id="searchPlace"
+            id="searchQuery"
             type="text"
-            placeholder="Enter here..."
+            placeholder="Enter your query..."
           />
         </div>
       </div>
