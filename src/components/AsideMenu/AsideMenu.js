@@ -9,8 +9,8 @@ class AsideMenu extends Component {
 
       <div className="aside-menu">
         <div className="my-favorite-places">
-          <h2 role="heading" aria-level="2">My favorite places</h2>
-          <ul id="list-favorite-places" role="list" aria-label="List favorite places">
+          <h2 aria-level="2">My favorite places</h2>
+          <ul id="list-favorite-places" aria-label="List favorite places">
             <li><a role="menuitem" href="#">Vin Au Verre</a></li>
             <li><a role="menuitem" href="#">A La Bière Comme A La Bière</a></li>
             <li><a role="menuitem" href="#">La Cave des Abbesses</a></li>

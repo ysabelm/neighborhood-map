@@ -6,7 +6,7 @@ class Map extends Component {
     render() {
 
         return (
-            <div id="map" role="Map application"></div>
+            <div id="map" role="Application"></div>
         )
     }
 }
