@@ -1,4 +1,5 @@
-export const pointsOfInterest = [{
+export const pointsOfInterest = [
+  {
     "title": "Vin Au Verre",
     "location": {
       "lat": 48.882277,
