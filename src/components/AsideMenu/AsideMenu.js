@@ -19,9 +19,9 @@ class AsideMenu extends Component {
           </ul>
         </div>
         <div className="search-form" aria-label="Search place">
-          <label htmlFor="searchQuery">Find Your Place</label>
+          <label>Find Your Place</label>
           <input
-            id="searchQuery"
+            id="searchPlace"
             type="text"
             placeholder="Enter your category..."
           />
