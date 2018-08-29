@@ -16,8 +16,13 @@ class App extends Component {
     markers: []
   }
 
+  gm_authFailure() {
+    window.alert("Google Maps error!")
+  }
+
   componentDidMount() {
     this.getVenues()
+    window.gm_authFailure = this.gm_authFailure
   }
 
   renderMap = () => {
@@ -123,6 +128,7 @@ function loadScript(url) {
   script.src = url
   script.async = true
   script.defer = true
+  script.onerror = function () { window.alert("The Google Maps API failed to load data!"); }
   index.parentNode.insertBefore(script, index)
 }
 
