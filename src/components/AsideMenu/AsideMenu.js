@@ -47,8 +47,8 @@ class AsideMenu extends Component {
             value={this.state.query}
           />
         </div>
-        <div className="my-favorite-places">
-          <h2 aria-level="2">My favorite places</h2>
+        <div className="favorite-places">
+          <h2 role="heading" aria-level="2">FAVORITE PLACES</h2>
           {this.state.venues.length !== 0 && (
             <ul id="list-favorite-places" aria-label="List favorite places">
               {this.state.venues.map((venue, index) => (

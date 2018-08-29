@@ -104,7 +104,7 @@ class App extends Component {
     return (
       <div className="neighborhood-app">
         <Header />
-        <main role="main">
+        <main role="">
           <AsideMenu
             venues={this.state.venues}
             markers={this.state.markers}

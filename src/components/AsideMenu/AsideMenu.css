@@ -3,7 +3,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
 
 .search-form {
@@ -11,40 +11,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 1em;
+}
+
+.search-form label,
+input {
+    padding: 0.5em;
 }
 
 .aside-menu h2 {
-    font-size: 1.2em;
+    font-size: 0.8em;
 }
 
 .aside-menu li {
     font-size: 1em;
 }
 
-.my-favorite-places {
+.favorite-places {
     display: flex;
     flex-direction: column;
+    margin-top: 1em;
 }
 
 #list-favorite-places {
     list-style: none
-}
-
-/* ====================== Responsive ====================== */
-
-@media screen and (min-width:760px) {
-    .aside-menu h2 {
-        font-size: 2em;
-    }
-    .aside-menu li {
-        font-size: 1.5em;
-    }
-
-    .search-form {
-        font-size: 1.5em;
-    }
-
-    .search-form input {
-        font-size: 1em;
-    }
 }

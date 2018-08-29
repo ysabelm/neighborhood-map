@@ -3,17 +3,14 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1em;
 }
 
 .neighborhood-app {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-
-html {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
 }
 
 body {
@@ -31,8 +28,7 @@ li {
 }
 
 h2 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 /* ====================== Map style ====================== */
@@ -41,4 +37,31 @@ h2 {
   width: 50%;
   height: calc(100% - 65px);
   left: 50%;
+}
+
+/* ====================== Responsive ====================== */
+
+@media screen and (min-width:760px) {
+  header {
+    font-size: 4em;
+  }
+
+  .favorite-places h2 {
+    font-size: 2em;
+  }
+
+  .aside-menu h2 {
+      font-size: 2em;
+  }
+  .aside-menu li {
+      font-size: 1.5em;
+  }
+
+  .search-form {
+      font-size: 1.5em;
+  }
+
+  .search-form input {
+      font-size: 1em;
+  }
 }
