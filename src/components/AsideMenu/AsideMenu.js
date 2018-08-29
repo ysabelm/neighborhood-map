@@ -38,25 +38,29 @@ class AsideMenu extends Component {
 
       <div className="aside-menu">
         <div className="search-form" aria-label="Search theatre">
-          <label>Find Your Theatre</label>
+          <label htmlFor="find" tabIndex="0">Find Your Theatre
           <input
             id="searchPlace"
             type="text"
             placeholder="Search a place..."
             onChange={event => this.searchVenue(event.target.value)}
             value={this.state.query}
+            tabIndex="0"
           />
+          </label>
         </div>
         <div className="favorite-places">
           <h2 role="heading" aria-level="2">FAVORITE PLACES</h2>
           {this.state.venues.length !== 0 && (
-            <ul id="list-favorite-places" aria-label="List favorite places">
+            <ul id="list-favorite-places" aria-label="List favorite places" role="list">
               {this.state.venues.map((venue, index) => (
                 <li
                   key={index}
-                  tabIndex={index}
+                  tabIndex="0"
+                  role="listitem"
                   className="item"
                   onClick={() => this.handleOnClickMarker(venue.venue.name)}
+                  onKeyPress={() => this.handleOnClickMarker(venue.venue.name)}
                 >
                   {venue.venue.name}
                 </li>

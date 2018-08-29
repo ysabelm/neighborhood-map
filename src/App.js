@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { mapStyles } from './data/mapStyles.js';
 import './App.css';
 
-//import Map from './components/Map/Map'
 import Header from './components/Header/Header'
 import AsideMenu from './components/AsideMenu/AsideMenu'
-//import { pointsOfInterest } from './data/poi.js'
 
 
 class App extends Component {
@@ -109,26 +107,26 @@ class App extends Component {
     return (
       <div className="neighborhood-app">
         <Header />
-        <main role="">
+        <main role="main">
           <AsideMenu
             venues={this.state.venues}
             markers={this.state.markers}
             updatePlaces={this.updatePlaces}
           />
-          <div id="map" role="map application"></div>
+          <div id="map" role="application"></div>
         </main>
       </div>
     )
   }
 }
 
-function loadScript(url) {
-  var index = window.document.getElementsByTagName("script")[0]
-  var script = window.document.createElement("script")
+const loadScript = (url) => {
+  const index = window.document.getElementsByTagName("script")[0]
+  const script = window.document.createElement("script")
   script.src = url
   script.async = true
   script.defer = true
-  script.onerror = function () { window.alert("The Google Maps API failed to load data!"); }
+  script.onerror = () => { window.alert("The Google Maps API failed to load data!"); }
   index.parentNode.insertBefore(script, index)
 }
 

@@ -38,30 +38,3 @@ h2 {
   height: calc(100% - 65px);
   left: 50%;
 }
-
-/* ====================== Responsive ====================== */
-
-@media screen and (min-width:760px) {
-  header {
-    font-size: 4em;
-  }
-
-  .favorite-places h2 {
-    font-size: 2em;
-  }
-
-  .aside-menu h2 {
-      font-size: 2em;
-  }
-  .aside-menu li {
-      font-size: 1.5em;
-  }
-
-  .search-form {
-      font-size: 1.5em;
-  }
-
-  .search-form input {
-      font-size: 1em;
-  }
-}

@@ -3,13 +3,12 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
 }
 
 .search-form {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     margin-top: 1em;
 }
@@ -17,6 +16,7 @@
 .search-form label,
 input {
     padding: 0.5em;
+    margin: 0.8em;
 }
 
 .aside-menu h2 {
@@ -35,4 +35,28 @@ input {
 
 #list-favorite-places {
     list-style: none
+}
+
+/* ====================== Responsive ====================== */
+
+@media screen and (min-width:760px) {
+    .favorite-places h2 {
+        font-size: 2em;
+    }
+
+    .aside-menu h2 {
+        font-size: 2em;
+    }
+
+    .aside-menu li {
+        font-size: 1.5em;
+    }
+
+    .search-form {
+        font-size: 1.5em;
+    }
+
+    .search-form input {
+        font-size: 1em;
+    }
 }
