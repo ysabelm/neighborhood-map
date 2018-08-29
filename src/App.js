@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import { mapStyles } from './data/mapStyles.js';
 import './App.css';
 
-import Map from './components/Map/Map'
+//import Map from './components/Map/Map'
 import Header from './components/Header/Header'
 import AsideMenu from './components/AsideMenu/AsideMenu'
-import { pointsOfInterest } from './data/poi.js'
+//import { pointsOfInterest } from './data/poi.js'
 
 
 class App extends Component {
 
 
   state = {
-    venues: []
+    venues: [],
+    markers: []
   }
 
   componentDidMount() {
@@ -29,12 +30,10 @@ class App extends Component {
     const parameters = {
       client_id: "30HUM4RXCRADFSCC1NFO4YQWL54T41NKHR5SN43LKTHGAWI5",
       client_secret: "W0OSXW2J3RLORN5VFGGQR2Q0FJWTPJCK1QGUH5MMXBLOUI53",
-      query: "théâtre",
+      query: "theatre",
       near: "Paris",
       v: "20182008"
     }
-
-
 
     fetch(venuesEndPoint + new URLSearchParams(parameters), {
       method: 'GET'
@@ -53,41 +52,52 @@ class App extends Component {
 
   initMap = () => {
 
-    // Create A Map
+    // Create the map
     const map = new window.google.maps.Map(document.getElementById('map'), {
       center: { lat: 48.855215, lng: 2.347154 },
       zoom: 13,
       styles: mapStyles
     })
 
-    // Create An InfoWindow
-    const infowindow = new window.google.maps.InfoWindow({maxWidth: 300})
+    // Create An InfoWindow and sets its max width
+    const infowindow = new window.google.maps.InfoWindow({ maxWidth: 250 })
 
     // Display Dynamic Markers
-    this.state.venues.map(myVenue => {
+    this.state.venues.map(selectedVenue => {
 
-      const contentString = `${myVenue.venue.name}
-      ${myVenue.venue.location.formattedAddress[0]}
-      ${myVenue.venue.location.formattedAddress[1]}`
+      // create infowindow content
+      let contentInfoWindow = `
+        <h2>${selectedVenue.venue.name}</h2>
+        <p>${selectedVenue.venue.location.formattedAddress[0]}</p>
+        <p>${selectedVenue.venue.location.formattedAddress[1]}</p>
+        `
 
-      // Create A Marker
-      var marker = new window.google.maps.Marker({
-        position: { lat: myVenue.venue.location.lat, lng: myVenue.venue.location.lng },
+      // Create marker
+      let marker = new window.google.maps.Marker({
+        position: { lat: selectedVenue.venue.location.lat, lng: selectedVenue.venue.location.lng },
         map: map,
-        title: myVenue.venue.name,
+        title: selectedVenue.venue.name
       })
+      this.state.markers.push(marker)
 
-      // Click on A Marker!
-      marker.addListener('click', function () {
+      // display infowindow
+      marker.addListener('click', () => {
 
-        // Change the content
-        infowindow.setContent(contentString)
-
-        // Open An InfoWindow
+        infowindow.setContent(contentInfoWindow)
         infowindow.open(map, marker)
+
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(window.google.maps.Animation.BOUNCE);
+        }
+
       })
 
     })
+  }
+  updatePlaces = (newVenue) => {
+    this.setState({ venue: newVenue })
   }
 
   render() {
@@ -95,8 +105,12 @@ class App extends Component {
       <div className="neighborhood-app">
         <Header />
         <main role="main">
-          <AsideMenu />
-          <Map />
+          <AsideMenu
+            venues={this.state.venues}
+            markers={this.state.markers}
+            updatePlaces={this.updatePlaces}
+          />
+          <div id="map" role="map application"></div>
         </main>
       </div>
     )
