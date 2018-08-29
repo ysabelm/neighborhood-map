@@ -9,6 +9,10 @@ To get started developing, you will :
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 * Then, in the process, you'll have to install `escape-string-regexp`
+* The service worker is implemented only in the production build, the steps to run the application in the production build are the following:
+`npm run build`
+`serve -s build`
+and navigate to http://localhost:5000/
 
 
 ## Dependencies
