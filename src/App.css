@@ -30,4 +30,15 @@ li {
   padding: 0;
 }
 
-/* ====================== Responsive ====================== */
+h2 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1em;
+}
+
+/* ====================== Map style ====================== */
+
+#map {
+  width: 50%;
+  height: calc(100% - 65px);
+  left: 50%;
+}
